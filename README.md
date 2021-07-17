@@ -1,0 +1,1 @@
+# pytest_shop_autotests
