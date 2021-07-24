@@ -1,2 +1,4 @@
-main_page_link = 'http://selenium1py.pythonanywhere.com/'
-login_page_link = 'http://selenium1py.pythonanywhere.com/ru/accounts/login/'
+class MainLinks:
+    main_page = 'http://selenium1py.pythonanywhere.com/'
+    login_page = 'http://selenium1py.pythonanywhere.com/ru/accounts/login/'
+    product = 'http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear'
