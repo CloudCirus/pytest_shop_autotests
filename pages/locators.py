@@ -19,3 +19,4 @@ class ProductPageLocators:
     PRICE = (By.CSS_SELECTOR, '.product_main .price_color')
     alert_TITLE = (By.CSS_SELECTOR, '.alert-success strong')
     alert_PRICE = (By.CSS_SELECTOR, '.alert-info strong')
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, '.alert-success strong')

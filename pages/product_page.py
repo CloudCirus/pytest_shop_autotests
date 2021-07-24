@@ -11,7 +11,6 @@ class ProductPage(BasePage):
 
         def get_value(locator, browser=self.browser):
             element = browser.find_element(*locator).text
-            print(element)
             return element
 
         title = get_value(ProductPageLocators.TITLE)
@@ -19,4 +18,8 @@ class ProductPage(BasePage):
         alert_title = get_value(ProductPageLocators.alert_TITLE)
         alert_price = get_value(ProductPageLocators.alert_PRICE)
 
-        assert title == alert_title and price == alert_price ,'>>> PRODUCT not added to cart!'
+        assert title == alert_title and price == alert_price, '>>> PRODUCT not added to cart!'
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            ">>> SUCSESS MESAGE is presented, but should not be!"
