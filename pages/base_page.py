@@ -14,7 +14,7 @@ class BasePage():
         self.url = url
         self.browser.implicitly_wait(timeout)
 
-    # Base methods:
+    # base methods:
     def open(self):
         self.browser.get(self.url)
 
@@ -41,6 +41,10 @@ class BasePage():
             return False
         return True
 
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), \
+            '>>> USER ICON IS NOT PRESENTED, probably user is not authorized!'
+
     # math method for approving:
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
@@ -65,3 +69,8 @@ class BasePage():
     def should_be_login_link(self):
         assert self.is_element_present(
             *BasePageLocators.LOGIN_PAGE_LINK), '>>> LOGIN LINK is not presented !!! <<<'
+
+    def go_to_basket_page(self):
+        login_link = self.browser.find_element(
+            *BasePageLocators.BASKET_PAGE_LINK)
+        login_link.click()
