@@ -45,7 +45,6 @@ def test_guest_can_add_product_to_basket(browser):
     page.can_add_product_to_basket()
 
 
-@pytest.mark.skip
 @pytest.mark.parametrize('link', PromoLinks.PROMO_LIST)
 def test_guest_can_add_product_to_basket_promo(browser, link):
     page = ProductPage(browser, link)
